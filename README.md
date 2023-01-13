@@ -27,6 +27,17 @@ the package to be in the same folder where `package.xml` file is.
 
 ### Create debian structure
 
+Initialize (if you haven't already) and update rosdep:
+
+```bash
+rosdep init
+rosdep update
+```
+
+Because `spot_msgs` depends on `bosdyn_msgs` which is not yet released, I had to fork rosdistro and put in a blank reference for `bosdyn_msgs`.
+
+Configure some stuff:
+
 ```bash
 bloom-generate rosdebian --os-name ubuntu --os-version jammy --ros-distro humble
 ```
